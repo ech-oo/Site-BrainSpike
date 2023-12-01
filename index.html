@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<htmL>
+    <head> 
+        <title> Brain Spike</title>
+    </head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    background: #1c0522;
+    overflow-x: hidden;
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+header .logo {
+    color:#fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    }
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+header ul li a:hover , 
+.active {
+    background: #fff;
+    color: #2b1055;
+}
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background:linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#moon {
+    mix-blend-mode: screen;
+}
+section img#mountains_front {
+    z-index: 10;
+}
+#text {
+    position: absolute;
+    right: -350;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+.sec {
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+.sec h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.sec p {
+    font-size: 1em;
+    color: #fff;
+}
+.card {
+        font-size: 30px;
+        color: #fff;
+    }
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/background.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .container { 
+        padding: 10px 10%;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+    }
+
+    nav ul li a::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: #444285;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    .header-text {
+        margin-top: 20%;
+        font-size: 30px;
+    }
+
+    .header-text h1 {
+        font-size: 60px;
+        margin-top: 20px;
+    }
+
+    .header-text h1 #span1 {
+        color: #444285;
+    }
+
+    .header-text h1 #span2 {
+        color: #f37343;
+    }
+    /*ABOUT */
+    #about {
+        padding: 80px 10px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .about-col-1 {
+        flex-basis: 35%;
+    }
+
+    .about-col-1 img { 
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .about-col-2 {
+        flex-basis: 60%;
+    }
+
+    .sub-title {
+        font-size: 60px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .tab-titles {
+        display: flex;
+        margin: 20px 0 40px;
+    }
+
+    .tab-links {
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .tab-links::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: #e31b59;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+    }
+
+    .tab-links.active-link::after {
+        width: 50%;
+    }
+
+    .tab-contents ul li {
+        list-style: none;
+        margin: 10px 0;
+    }
+
+    .tab-contents ul li span {
+        color: #f37343;
+        font-size: 14px;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-contents.active-tab {
+        display: block;
+    }
+
+#services {
+        padding: 30px 0;
+    }
+
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+
+    .services-list div {
+        background-color: #391b41;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 300;
+        border-right: 10px;
+        transition: background 0.3s, transform 0.5s;
+    }
+
+    .services-list div i {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .services-list div h2 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .services-list div p {
+        font-size: 15px;
+        
+    }
+
+    .services-list div a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .services-list div:hover {
+        background: #444285;
+        transform: translateY(-10px);
+    }
+
+    #portifolio {
+        padding: 50px 0;
+    }
+
+    .work-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+
+    .work {
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .work img {
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.5s;
+    }
+
+    .layer {
+        width: 100%;
+        height: 0%;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), #f37343);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        font-size: 14px;
+        transition: height 0.5s;
+    }
+
+    .layer h3 {
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .layer a {
+        margin-top: 20px;
+        color: #444285;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        background: #fff;
+        width: 60px;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .work:hover img {
+        transform: scale(1.1);
+    }
+
+    .work:hover .layer {
+        height: 100%;
+    }
+
+    .work p {
+        font-size: 20px;
+    }
+
+    .btn {
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 1px solid #444285;
+        padding: 11px 60px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: gray;    
+        transition: background 0.5s;
+    }
+
+    .btn:hover {
+        background: #444285
+    }
+    
+    .contact-left {
+        flex-basis: 35%;
+    }
+
+    .contact-right {
+        flex-basis: 60%;
+    }
+
+    .contact-left p {
+        margin-top: 30px;
+    }
+
+    .contact-left p i {
+        color: #e31b59;
+        margin-right: 15px;
+        font-size: 25px;
+    }
+
+    .social-icons {
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #ababab;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+
+.social-icons a:hover {
+        color: #e31b59;
+        transform: translateY(-5px);
+    }
+
+    .btn.btn2 {
+        display: inline-block;
+        background: #444285;
+    }
+
+    .contact-right form {
+        width: 100%;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #1d1d1d;
+        padding: 15px;
+        margin: 15px;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+    }
+
+    form .btn2 {
+        padding: 14px 60px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    /* HP */
+    nav .fa-solid {
+        display: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+        #header {
+            background-image: url(images/phone-background.png);
+        }
+        .header-text {
+            margin-top: 100%;
+            font-size: 16px;
+        }
+        .header-text h1 {
+            font-size: 30px;
+        }
+        nav .fa-solid{
+            display: block;
+            font-size: 25px;
+        }
+
+    nav ul {
+        background: #e31b59;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .sub-title{
+        font-size: 40px;
+    }
+
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+
+    .about-col-2 {
+        font-size: 14px;
+    }
+
+    .tab-links {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+}
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 12rem;
+ height: auto;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #282936;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #ffffff;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #fff;
+}
+
+/*footer*/
+.footer-diagonal {
+      width: 100%;
+      float: left;
+      overflow: hidden;
+      line-height: 0;
+  }
+  .footer-diagonal svg {
+      
+      float: left;
+      display: block;
+      width: calc(100% + 1px);
+      height: 45px;
+      transform: rotateY(180deg);
+      background-color: rgb(34, 34, 34);
+  }
+  .footer-diagonal .shape-fill {
+      fill: #1c0522;
+  }
+  .main_footer          { background-color: rgb(34, 34, 34); color:#fff; font-size:1em; }
+  .main_footer .content { float:left; width:80%; margin:0 10%; padding: 2em 0; }
+  .container { float:left; width:100%; }
+  .colfooter { 
+   
+    width:100%; 
+    height:auto;
+    min-height: 100%; 
+    float:left; 
+    margin-bottom:0em;
+  }
+  .colfooter ul        { width:100%; float:left; }
+  .colfooter ul p     { padding:0.2em 0em; }
+  .colfooter ul p a   { text-decoration:none; color:#ffffff; font-size:1em; transition:0.2s; }
+  .colfooter ul p a i { font-size:0.5em; }
+  .colfooter ul p a:hover { color:#F37343; }
+  .colfooter .titleFooter   { 
+      font-family: 'Lato', sans-serif;
+      font-size: 1.3em;
+      color: #ffffff;
+      padding-bottom: 0.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px #424242 solid;
+  }
+  .colfooter p  { 
+    font-family: 'Lato', sans-serif; 
+    color:#ffffff; 
+    font-size:1em; 
+    height:25px; 
+  }
+  .colfooter .redesocial { 
+      
+      color: #ffffff;
+      float: left;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      transition:0.2s;
+  }
+  .colfooter .redesocial:hover { 
+      
+      color: #444285;
+      transition:0.2s;
+  }
+  .main_footer_copy          { background-color:grey; width:100%; float:left; font-family: 'Lato', sans-serif; text-align:center; padding:1.5em 0em; }
+  .main_footer_copy .content { float:left; width:80%; margin:0 10%; padding:20px 0; border-top:1px #464646 solid; }
+  .main_footer_copy p { font-size:1em; color:#ffffff; height:20px; }
+  .main_footer_copy .m-b-footer   { margin-bottom:0.5em; }
+  .main_footer_copy .by   { font-size:0.96em; }
+  .main_footer_copy .by a       { color:#fff; text-decoration:none; font-weight:600; transition:0.2s; }
+  .main_footer_copy .by a:hover { text-decoration:underline; color:#F37343 }
+  .main_footer_copy .by i { font-size:0.96em; margin-right:3px; color:#444285; }
+  /*Responsivo*/
+  /*960PX BREAKPOINT*/
+  @media (min-width:60em){
+    .footer-diagonal svg         { width: calc(100% + 1.3px); height: 160px; }
+    .main_footer .content        { padding: 2em 0; }
+    .colfooter .titleFooter      { border-bottom: 0px; }
+    .colfooter                   { width:30%; min-height:200px; margin-right:5%; margin-bottom:0; border-right: 1px #424242 solid; }
+    .colfooter:nth-of-type(3n+0) { margin-right:0; border-right:0;}
+  }
+
+  .main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.twitter {
+  margin-top: 1.5em;
+  margin-left: -.9em;
+  fill: #03A9F4;
+}
+
+.card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.github {
+  margin-top: -.6em;
+  margin-left: 1.2em;
+}
+
+.card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.discord {
+  margin-top: -.9em;
+  margin-left: -1.2em;
+  fill: #8c9eff;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03A9F4;
+}
+
+.card2:hover .twitter {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+  fill: white;
+}
+
+.light-mode {
+        background-color: white;
+        color: black;
+      }
+
+.lighttheme {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #444285;
+    padding: 11px 60px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #f37343;    
+        
+}
+li {
+    color: white;;
+}
+ .hh {
+    color: white;
+ }
+ p {
+    color: white;
+ }
+ .container1 {
+    max-width: 2000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #391b41;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.conta {
+    font-size: 26px;
+}
+</style>
+    <body>
+        <header>
+            <a href="#" class="logo">Brain Spike</a>
+            <ul> 
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Equipe</a></li>
+                <li><a href="#portifolio">App</a></li>
+                <li><a href="registro.html">Entrar/Cadastrar</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Brain Spike</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <div id="about">
+                <div class="container1">
+                    <div class="row">
+                        <div class="about-col-1">
+                            <img src="pixel.png" />
+                        </div>
+                        <div class="about-col-2">
+            <h2 class="hh">Sobre Nós</h2>
+            <p> Nosso objetivo é ajudar alunos com um problema muito comum para os estudantes hoje em dia... a falta de foco ou em outras palavras, a procrastinação,
+                ajudar a pararem de procrastinar e apredenderem suas matérias mais dificultosas de um jeito descontraído e
+                divertido é uma maneira de aumentar a eficiência nos estudos de forma leve e prática.
+                O projeto foi desenvolvido com base nas próprias dificuldades que nós da BS (Brain Spike) temos como alunos, assim,
+                nosso aplicativo oderá ajudar pessoas como nós que tem as mesmas dificuldades que as nossas.</p>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li>Você sabia que cerca de <span>90% da população</span><br />sofre com a procrastinação?</li>
+                        <li>
+                            <span>Causas</span><br />
+                            - excesso de preocupação com a própria capacidade;<br>
+                            - desorganização;<br>
+                            - medo do fracasso;<br>
+                            - perfeccionismo;<br>
+                        </li>
+                        <li>
+                            Quando enfretamos emoções como ansiedade associada à uma tarefa, a tendência é procrastinar para regular nossas emoções.
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li>
+                            <span>Objetivo</span><br />Com base em nossas próprias vivências em relação à procrastinação,
+                            decidimos criar um aplicativo com o objetivo de ajudar alunos com um problema muito comum para os estudantes,
+                            um aplicativo para ajudar a pararem de procrastinar e apredenderem de um jeito descontraído e
+                            divertido é uma maneira de aumentar a eficiência nos estudos de forma leve e prática.
+                        </li>
+                                   </div>
+        </div>
+    </div>
+</div>
+</div>
+
+        </div>
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">Nossa Equipe</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Anne Caroline</h2>
+                        <p>
+                            - Desenvolvimento Web <br>
+                            - Desenvolvimento Game <br>
+                        </p>
+                        <br>
+                        
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-crop-simple"></i>
+                    <h2>Ettore Mendonça</h2>
+                    <p>
+                        - Mobile Design  <br>
+                        - Web Design <br>
+                    </p>
+                    <br>
+                    
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Guilherme Dalla</h2>
+                    <p>
+                        - Documentação <br>
+                        - UI/UX <br>
+                    </p>
+                    <br>
+                    
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Guilherme Alves</h2>
+                    <p>
+                        - Documentação <br>
+                        - Design <br>
+                    </p>
+                    <br>
+                    
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Jônatas Medeiros</h2>
+                    <p>
+                        - Documentação <br>
+                        - Desenvolvimento Web <br>
+                    </p>
+                    <br>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        
+        <div id="portifolio">
+            <div class="container">
+                <h1 class="sub-title">Nosso Aplicativo</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="pixel2.png" />
+                        <div class="layer">
+                            <h3 class="card">Desafios</h3>
+                            <p>
+                                Você enfrentará perguntas que ficarão mais dificeis conforme passa das fases, em cada fase você terá três perguntas para responder, não se assuste.
+                                As perguntas serão feitas por outros personagens, tome cuidado, alguns podem fazem pegadinha, principalmente o Goblin, mas não conte isso para ele!
+                            </p>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="pixel.png" />
+                        <div class="layer">
+                            <h3 class="card">Como Funciona?</h3>
+                            <p>
+                                Nós usamos o GameMaker para produzir o jogo, seguimos com a linguagem GML (Linguagem própria do GameMaker), sobre como jogar, temos um tutorial no início do jogo,
+                                onde todos os atalhos são explicados e você sempre pode voltar para a fase de tutorial caso desejar, ou caso esqueça de alguma tecla.
+                            </p>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="pixel3.jpg" />
+                        <div class="layer">
+                            <h3 class="card">Ambientes</h3>
+                            <p>
+                                Encare novos desafios a cada bioma que passar, lembre-se, cada bioma tem perguntas e alguns desafios a mais para não ser tão fácil a sua jornada, seja cuidadoso,
+                                talvez você encontre alguns bichos que não gostam de visitas. Tome cuidado, cada ambiente tem animais e desafios específicos.
+                            </p>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+        
+
+        <script src="script.js"></script>
+        <!--Inicia Footer-->
+        
+        <div class="footer-diagonal">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <footer class="main_footer container">
+            
+            <div class="content">
+                
+                <div class="colfooter">
+                    
+                    <h2 class="titleFooter">Menu</h2>
+                    
+                    <ul>
+                    
+                      <p class="afooter"><a href="#header" title="Home" class="a">Home</a></p>
+                      <p class="afooter"><a href="#about" title="Sobre" class="a">Sobre</a></p>
+                      <p class="afooter"><a href="#services" title="Equipe" class="a">Equipe</a></p>
+                      <p class="afooter"><a href="#portifolio" title="App" class="a">Aplicativo</a></p>
+                      <p class="afooter"><a href="registro.html" title="Entrar" class="a">Entrar/Cadastrar</a></p>
+                      <p class="afooter"><a href="#" title="Fale Conosco" class="a">Fale Conosco</a></p>
+                    
+                    </ul>
+                
+                </div><!--Col Footer 1-->        
+                
+                <div class="colfooter">
+                   
+                   <h2 class="titleFooter">Contato</h2>
+                   <ul>
+                   <p class="afooter"><a href="#"  class="a">brainspike99@gmail.com</a></p>
+                  <p class="afooter"><a href="#" class="a">11 99782-2706</a></p>
+                   <p class="afooter"><a href="#" class="a">11 91478-0759</a></p>
+                   </ul>
+                
+                </div><!--Col Footer 2-->
+                
+                <div class="colfooter">
+                   
+                    <h2 class="titleFooter">Redes Sociais</h2>          
+                    <a href="https://www.instagram.com/brain_spike/" class="redesocial"><span> <img src="icon icon-instagram.png" width="30px" height="30px">   <i class="aa"></i>/brain_spike</span></a>            
+                    <a href="https://twitter.com/Brain_Spike1577" class="redesocial"><span> <img src="icon icon-twitter.png" width="30px" height="30px">   <i class="aa"></i>/Brain_Spike1577</span></a>   
+                    <a href="https://www.tiktok.com/@brainspike?lang=pt-BR" class="redesocial"><span> <img src="tiktok.png" width="30px" height="30px">   <i class="aa"></i>/brainspike</span></a>            
+                             
+                    
+                </form>
+                
+                </div><!--Col Footer 3-->
+                
+                <div class="clear"></div>
+            
+            </div><!--Contant-->
+            
+        </footer>
+        <!--Fecha Footer-->
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header')
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
